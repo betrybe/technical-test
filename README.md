@@ -229,11 +229,9 @@ A página deverá conter:
 
 Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1) para ter uma ideia de como sua tela deve se parecer.
 
-## BÔNUS
+## Comentários
 
-### 15 - Adicione testes cobrindo todos os requisitos da API
-
-### 16 - Adicione testes cobrindo todos os requisitos do front-end
+* Fique à vontade para usar as boas práticas que entender necessárias para o projeto, como escolhas de arquitetura, uso de testes, linters, documentação, etc.
 
 ---
 
