@@ -28,13 +28,15 @@ Você pode acessar um protótipo das telas [neste link](https://www.figma.com/fi
 
 #### Endpoints
 
-### 1 - A URL base da API deve ser `localhost:3001` para todos os endpoints
+### 1 - A URL base da API deve ser `localhost:[PORTA]/api` para todos os endpoints
 
-### 2 - O endpoint `/login` deve receber uma requisição do tipo `POST`. O corpo da request deve conter um e-mail e uma senha válidos
+### 2 - O endpoint `/api/login` deve receber uma requisição do tipo `POST`. O corpo da request deve conter um e-mail e uma senha válidos
 
 Um email será considerado válido se tiver o formato `<prefixo>@<domínio>`.
 
 A senha deverá conter 6 caracteres, todos números.
+
+O email e senha não precisam existir num banco de dados, devem apenas seguir as regras acima.
 
 O corpo da requisição deverá seguir o formato abaixo:
 
@@ -57,7 +59,7 @@ A resposta da requisição deve ter o seguinte formato:
 }
 ```
 
-### 5 - O endpoint `/cryto/btc` deve retornar a cotação de câmbio
+### 5 - O endpoint `/api/cryto/btc` deve retornar a cotação de câmbio
 
 Esse endpoint deve receber uma requisição do tipo `GET` e retornar o mesmo objeto retornado por [este endpoint](https://api.coindesk.com/v1/bpi/currentprice/BTC.json) da API do CoinDesk. A única diferença é que você deverá adicionar algumas chaves na resposta.
 
@@ -91,7 +93,7 @@ Lembre-se de que os retornos da API são no padrão americano.
 **Exemplo de retorno:**
 
 ```json
-/* Retorno do endpoint `/crypto/btc` */
+/* Retorno do endpoint `/api/crypto/btc` */
 {
   "time": {
     "updated": "Mar 22, 2020 23:54:00 UTC",
@@ -134,7 +136,7 @@ Lembre-se de que os retornos da API são no padrão americano.
 }
 ```
 
-### 6 - O endpoint `/crypto/btc` deve atualizar o valor da cotação das moedas `BRL`, `EUR` e `CAD`
+### 6 - O endpoint `/api/crypto/btc` deve atualizar o valor da cotação das moedas `BRL`, `EUR` e `CAD`
 
 O endpoint deve aceitar requisições `POST` e **atualizar o valor da cotação da moeda no arquivo** `currencies.json`.
 
@@ -157,13 +159,13 @@ A resposta de uma requisição feita com sucesso será da seguinte forma:
 }
 ```
 
-### 7 - Caso o valor passado para atualização no endpoint `/crypto/btc` seja inválido, o endpoint deve retornar um código 400
+### 7 - Caso o valor passado para atualização no endpoint `/api/crypto/btc` seja inválido, o endpoint deve retornar um código 400
 
 Se o valor de `currency` for inválido, o corpo da resposta deve ser `{ message: "Moeda inválida" }`.
 
 Se o valor do campo `value` for inválido, o corpo da resposta deve ser `{ message: "Valor inválido" }`.
 
-### 8 - Requisições para o endpoint `/crypto/btc` devem conter um token no cabeçalho na chave `Authorization`
+### 8 - Requisições para o endpoint `/api/crypto/btc` devem conter um token no cabeçalho na chave `Authorization`
 
 A chave deve ser preenchida com o valor do token que foi fornecido ao usuário no login, da seguinte forma: `Authorization: <TOKEN_DO_LOGIN>`.
 
@@ -187,13 +189,13 @@ O corpo da resposta deve ser o seguinte:
 
 ### Front-end
 
-### 10 - A URL base do front-end deve ser `localhost:3000`
+### 10 - A URL base do front-end deve ser `localhost:[PORTA]`
 
 ### 11 - Crie uma página de login, com a rota `login`
 
 Essa página deve conter um formulário de e-mail e senha e um botão "Entrar".
 
-Ao clicar no botão, deve ser feita uma requisição para o endpoint de `/login` da API.
+Ao clicar no botão, deve ser feita uma requisição para o endpoint de `/api/login` da API.
 
 Caso a requisição seja bem sucedida, o token retornado deve ser salvo no `localStorage`, e a página deve ser redirecionada para a raiz da aplicação `("/")`.
 
@@ -205,7 +207,7 @@ Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto
 
 Essa página é onde será possível ver a conversão de Bitcoin em outras moedas.
 
-Ao carregar, a página deve fazer uma requisição `GET` para o endpoint `/crypto/btc` para obter os valores de conversão.
+Ao carregar, a página deve fazer uma requisição `GET` para o endpoint `/api/crypto/btc` para obter os valores de conversão.
 
 A página deve conter um input onde será possível digitar um valor em Bitcoins e quatro campos com os valores correspondentes em `USD`, `BRL`, `EUR` e `CAD`. Ao digitar o valor no input, os quatros campos devem ser atualizados.
 
@@ -221,7 +223,7 @@ A página deverá conter:
 
 - Um input onde o novo valor de cotação poderá ser digitado;
 
-- Um botão "Atualizar". Ao clicar nesse botão, deve ser feita uma requisição `POST` para o endpoint `/crypto/btc`, com o novo valor da moeda selecionada. Caso a requisição seja bem sucedida, a página deverá ser redirecionada para a **home**. Caso contrário, a mensagem de erro retornada pela API deve ser exibida na página;
+- Um botão "Atualizar". Ao clicar nesse botão, deve ser feita uma requisição `POST` para o endpoint `/api/crypto/btc`, com o novo valor da moeda selecionada. Caso a requisição seja bem sucedida, a página deverá ser redirecionada para a **home**. Caso contrário, a mensagem de erro retornada pela API deve ser exibida na página;
 
 - Um botão "Voltar" que, quando clicado, redireciona para a **home**, sem atualizar o valor da moeda selecionada.
 
@@ -237,7 +239,7 @@ Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto
 
 ## Instruções para entregar seu projeto:
 
-Crie esse projeto no **GitHub** e nos envie o link do repositório.
+Crie esse projeto em sua conta no **GitHub** e nos envie o link do repositório.
 Você pode utilizar a tecnologia que quiser tanto para o _backend_ como para o _frontend_.
 
 ps: Lembre-se de deixar o repositório público para que possamos ter acesso ao código
