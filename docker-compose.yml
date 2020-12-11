@@ -1,0 +1,47 @@
+version: "3.6"
+services:
+
+  mysql:
+    image: mysql:5.7
+    container_name: betrybe-mysql
+    working_dir: /application
+    volumes:
+      - .:/application
+    environment:
+      - MYSQL_ROOT_PASSWORD=betrybe_password
+      - MYSQL_DATABASE=betrybe
+      - MYSQL_USER=betrybe_user
+      - MYSQL_PASSWORD=betrybe_password
+    ports:
+      - "8002:3306"
+
+  webserver:
+    image: nginx:alpine
+    container_name: betrybe-webserver
+    working_dir: /application
+    volumes:
+      - .:/application
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8000:80"
+
+  php-fpm:
+    build: docker/php-fpm
+    container_name: betrybe-php-fpm
+    working_dir: /application
+    volumes:
+      - .:/application
+      - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+
+  node:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    container_name: betrybe-node
+    working_dir: /application
+    command: npm run watch
+    volumes:
+      - .:/application
+      - '/application/node_modules'
+    environment:
+      - NODE_ENV=development

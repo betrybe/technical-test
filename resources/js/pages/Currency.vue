@@ -111,7 +111,7 @@
                         if (error.response.status === 500) {
                             this.$toastr.e(
                                 "Caso o problema persista entre em contato com o Administrador",
-                                "Erro ao tentar cadastrar uma disciplina"
+                                "Erro ao atualizar moeda"
                             );
                         }
                     });

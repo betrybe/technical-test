@@ -39556,7 +39556,7 @@ var routes = [{
   path: '/login',
   name: 'login',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/Login */ "./resources/js/pages/Login.vue"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../pages/Login */ "./resources/js/pages/Login.vue"));
   },
   meta: {
     auth: false
@@ -39574,7 +39574,7 @@ var routes = [{
   path: '/currency',
   name: 'currency',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../pages/Currency */ "./resources/js/pages/Currency.vue"));
+    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/Currency */ "./resources/js/pages/Currency.vue"));
   },
   meta: {
     auth: true
@@ -39610,8 +39610,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/pedro/betrybe-test/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/pedro/betrybe-test/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /application/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /application/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
