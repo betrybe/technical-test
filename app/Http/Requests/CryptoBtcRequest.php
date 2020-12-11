@@ -23,7 +23,7 @@ class CryptoBtcRequest extends BaseRequest
     {
         return [
             'currency' => 'required|in:BRL,EUR,CAD',
-            'value' => 'required|numeric|min:1',
+            'value' => 'required|numeric|min:0',
         ];
     }
 }

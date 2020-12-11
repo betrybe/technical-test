@@ -36,13 +36,16 @@
                                     <label for="room">
                                         Novo Valor
                                     </label>
+
                                     <input
                                         v-model="value"
-                                        type="text"
+                                        type="number"
+                                        step="0.01"
                                         class="form-control"
                                         id="room"
                                         placeholder="Valor"
                                     />
+
                                 </div>
                             </div>
                             <button type="submit" @click="redirectToHome()" class="btn float-left"
@@ -58,8 +61,14 @@
 </template>
 
 <script>
+
+    import {TheMask} from "vue-the-mask";
+
     export default {
-        components: {},
+
+        components: {
+            TheMask
+        },
         data() {
             return {
                 errors: '',
@@ -86,12 +95,12 @@
                         this.value = '';
                         this.current_value = '';
                         this.$toastr.s("Taxa de conversão atualizada com sucesso!", "Sucesso")
-
+                        this.fetchCurrencies();
                         this.handleSubmit();
                     })
                     .catch(error => {
                         this.has_error = true;
-                        if (error.response.status === 422) {
+                        if (error.response.status === 400) {
                             this.$toastr.w(
                                 "Verifique os dados preenchidos e tente novamente",
                                 "Existem erros no formulário"

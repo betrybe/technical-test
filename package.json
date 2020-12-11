@@ -28,7 +28,6 @@
     },
     "dependencies": {
         "@websanova/vue-auth": "^2.21.14-beta",
-        "admin-lte": "^3.0.5",
         "cep-promise": "^4.0.3",
         "es6-promise": "^4.2.8",
         "laravel-vue-pagination": "^2.3.1",
