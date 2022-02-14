@@ -16,7 +16,10 @@ A aplicação a ser contruída é um "index" para vermos o preço do BitCoin em 
 
 Começando pela API, você vai desenvolver alguns endpoints conectando APIs externas e arquivos JSON locais do projeto.
 
-A API externa que vamos utilizar é a da **CoinDesk**. A [documentação está disponível aqui](https://www.coindesk.com/coindesk-api).
+A API externa que vamos utilizar é a da **CoinDesk**. Os endpoints utilizados estão disponveis aqui:
+- [https://api.coindesk.com/v1/bpi/currentprice.json](https://api.coindesk.com/v1/bpi/currentprice.json)
+- [https://api.coindesk.com/v1/bpi/currentprice/\<CODE>\.json](https://api.coindesk.com/v1/bpi/USD.json)
+
 
 O front-end, vai basicamente servir como expositor para a API que você vai criar. São três telas simples que você precisará desenvolver.
 
