@@ -152,7 +152,7 @@ O corpo da requisição deverá ter o seguinte formato:
 }
 ```
 
-O valor de `currency` só poderá ser `BRL`, `EUR` e `CAD`. `value` deve ser inteiro e maior que zero. Ambos os campos são obrigatórios.
+O valor de `currency` só poderá ser `BRL`, `EUR` e `CAD`. `value` deve ser float e maior que zero. Ambos os campos são obrigatórios.
 
 A resposta de uma requisição feita com sucesso será da seguinte forma:
 
