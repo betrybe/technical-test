@@ -66,7 +66,7 @@ A resposta da requisição deve ter o seguinte formato:
 
 Esse endpoint deve receber uma requisição do tipo `GET` e retornar o mesmo objeto retornado por [este endpoint](https://api.coindesk.com/v1/bpi/currentprice/BTC.json) da API do CoinDesk. A única diferença é que você deverá adicionar algumas chaves na resposta.
 
-Na resposta desse endpoint, você vai adicionar as chaves `BRL`, `EUR` e `CAD` (Real, Euro e Dólar Canadense). O valor dessas moedas será calculado sobre à cotação do dólar em relação a elas e à cotação do Bitcoin em dólares. 
+Na resposta desse endpoint, você vai adicionar as chaves `BRL`, `EUR` e `CAD` (Real, Euro e Dólar Canadense). O valor dessas moedas será calculado sobre à cotação do dólar em relação a elas e à cotação do Bitcoin em dólares.
 
 O valor da cotação do dólar nessas moedas **será fixo em um dado momento e deverá ser salvo em um arquivo** chamado `currencies.json` na sua API. Inicialmente, esse arquivo deverá ter o conteúdo abaixo:
 
