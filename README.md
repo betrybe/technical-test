@@ -18,7 +18,7 @@ Começando pela API, você vai desenvolver alguns endpoints conectando APIs exte
 
 A API externa que vamos utilizar é a da **CoinDesk**. Os endpoints utilizados estão disponveis aqui:
 - [https://api.coindesk.com/v1/bpi/currentprice.json](https://api.coindesk.com/v1/bpi/currentprice.json)
-- [https://api.coindesk.com/v1/bpi/currentprice/\<CODE>\.json](https://api.coindesk.com/v1/bpi/USD.json)
+- [https://api.coindesk.com/v1/bpi/currentprice/\<CODE>\.json](https://api.coindesk.com/v1/bpi/currentprice/USD.json)
 
 
 O front-end vai basicamente servir como expositor para a API que você vai criar. São três telas simples que você precisará desenvolver.
