@@ -62,7 +62,7 @@ A resposta da requisição deve ter o seguinte formato:
 }
 ```
 
-### 5 - O endpoint `/api/cryto/btc` deve retornar a cotação de câmbio
+### 5 - O endpoint `/api/crypto/btc` deve retornar a cotação de câmbio
 
 Esse endpoint deve receber uma requisição do tipo `GET` e retornar o mesmo objeto retornado por [este endpoint](https://api.coindesk.com/v1/bpi/currentprice/BTC.json) da API do CoinDesk. A única diferença é que você deverá adicionar algumas chaves na resposta.
 
