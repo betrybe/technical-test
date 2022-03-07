@@ -93,10 +93,9 @@ O cálculo deverá ser realizado da seguinte forma, para cada uma das três moed
 
 Lembre-se de que os retornos da API são no padrão americano.
 
-**Exemplo de retorno:**
+**Exemplo de retorno do endpoint `/api/crypto/btc`:**
 
 ```json
-/* Retorno do endpoint `/api/crypto/btc` */
 {
   "time": {
     "updated": "Mar 22, 2020 23:54:00 UTC",
