@@ -8,7 +8,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 Você vai desenvolver um app full-stack! Isso significa que você vai construir tanto a API quanto o front-end! 😃
 
-A aplicação a ser contruída é um "index" para vermos o preço do BitCoin em diferentes moedas.
+A aplicação a ser contruída é um "index" para vermos o preço do Bitcoin em diferentes moedas.
 
 ---
 
@@ -18,10 +18,10 @@ Começando pela API, você vai desenvolver alguns endpoints conectando APIs exte
 
 A API externa que vamos utilizar é a da **CoinDesk**. Os endpoints utilizados estão disponveis aqui:
 - [https://api.coindesk.com/v1/bpi/currentprice.json](https://api.coindesk.com/v1/bpi/currentprice.json)
-- [https://api.coindesk.com/v1/bpi/currentprice/\<CODE>\.json](https://api.coindesk.com/v1/bpi/USD.json)
+- [https://api.coindesk.com/v1/bpi/currentprice/\<CODE>\.json](https://api.coindesk.com/v1/bpi/currentprice/USD.json)
 
 
-O front-end, vai basicamente servir como expositor para a API que você vai criar. São três telas simples que você precisará desenvolver.
+O front-end vai basicamente servir como expositor para a API que você vai criar. São três telas simples que você precisará desenvolver.
 
 Você pode acessar um protótipo das telas [neste link](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1).
 
@@ -50,7 +50,7 @@ O corpo da requisição deverá seguir o formato abaixo:
 }
 ```
 
-### 3 - Caso algum desses campos seja inválido, retorne um código de status 400 com o corpo `{ message: "Campos inválidos" }`.
+### 3 - Caso algum desses campos seja inválido, retorne um código de status 400 com o corpo `{ message: "Campos inválidos" }`
 
 ### 4 - Caso esteja tudo certo com o login, a resposta deve ser um token de 16 caracteres, contendo letras e números aleatórios
 
@@ -62,11 +62,11 @@ A resposta da requisição deve ter o seguinte formato:
 }
 ```
 
-### 5 - O endpoint `/api/cryto/btc` deve retornar a cotação de câmbio
+### 5 - O endpoint `/api/crypto/btc` deve retornar a cotação de câmbio
 
 Esse endpoint deve receber uma requisição do tipo `GET` e retornar o mesmo objeto retornado por [este endpoint](https://api.coindesk.com/v1/bpi/currentprice/BTC.json) da API do CoinDesk. A única diferença é que você deverá adicionar algumas chaves na resposta.
 
-Na resposta desse endpoint, você vai adicionar as chaves `BRL`, `EUR` e `CAD` (Real, Euro e Dólar Canadense). O valor dessas moedas será calculado sobre à cotação do dólar em relação a elas e à cotação do Bitcoin em dólares. 
+Na resposta desse endpoint, você vai adicionar as chaves `BRL`, `EUR` e `CAD` (Real, Euro e Dólar Canadense, respectivamente). O valor dessas moedas será calculado sobre a cotação do dólar em relação a elas e à cotação do Bitcoin em dólares.
 
 O valor da cotação do dólar nessas moedas **será fixo em um dado momento e deverá ser salvo em um arquivo** chamado `currencies.json` na sua API. Inicialmente, esse arquivo deverá ter o conteúdo abaixo:
 
@@ -81,7 +81,7 @@ O valor da cotação do dólar nessas moedas **será fixo em um dado momento e d
 
 Isso significa, por exemplo, que a cotação inicial do dólar será de 5,40 reais.
 
-O valor das chaves `rate` e `rate_float`, na resposta, devem ser calculados a partir dos valores no arquivo `currencies.json` e da cotação do Bitcoin em dólares retornado pela API do CoinDesk. Esses campos devem também respeitar a tipagem (`string` e `float`, respectivamente). Os valores dos demais campos podem ser vistos no exemplo abaixo.
+Os valores das chaves `rate` e `rate_float`, na resposta, devem ser calculados a partir dos valores no arquivo `currencies.json` e da cotação do Bitcoin em dólares retornado pela API do CoinDesk. Esses campos devem também respeitar a tipagem (`string` e `float`, respectivamente). Os valores dos demais campos podem ser vistos no exemplo abaixo.
 
 O cálculo deverá ser realizado da seguinte forma, para cada uma das três moedas adicionais:
 
@@ -93,10 +93,9 @@ O cálculo deverá ser realizado da seguinte forma, para cada uma das três moed
 
 Lembre-se de que os retornos da API são no padrão americano.
 
-**Exemplo de retorno:**
+**Exemplo de retorno do endpoint `/api/crypto/btc`:**
 
 ```json
-/* Retorno do endpoint `/api/crypto/btc` */
 {
   "time": {
     "updated": "Mar 22, 2020 23:54:00 UTC",
@@ -206,7 +205,7 @@ Caso contrário, a mensagem de erro deve ser exibida na tela.
 
 Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1) para ter uma ideia de como sua tela deve se parecer.
 
-### 13 - Crie a página home, com a cotação do Bitcoin em várias moedas
+### 12 - Crie a página home, com a cotação do Bitcoin em várias moedas
 
 Essa página é onde será possível ver a conversão de Bitcoin em outras moedas.
 
@@ -216,7 +215,7 @@ A página deve conter um input onde será possível digitar um valor em Bitcoins
 
 Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1) para ter uma ideia de como sua tela deve se parecer.
 
-### 14 - Crie uma página para atualizar o valor da cotação de uma moeda
+### 13 - Crie uma página para atualizar o valor da cotação de uma moeda
 
 A página deverá conter:
 
