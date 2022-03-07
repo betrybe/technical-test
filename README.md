@@ -206,7 +206,7 @@ Caso contrário, a mensagem de erro deve ser exibida na tela.
 
 Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1) para ter uma ideia de como sua tela deve se parecer.
 
-### 13 - Crie a página home, com a cotação do Bitcoin em várias moedas
+### 12 - Crie a página home, com a cotação do Bitcoin em várias moedas
 
 Essa página é onde será possível ver a conversão de Bitcoin em outras moedas.
 
@@ -216,7 +216,7 @@ A página deve conter um input onde será possível digitar um valor em Bitcoins
 
 Consulte o [protótipo](https://www.figma.com/file/7TbyLzHSCpMRNxHEAN0QOi/Crypto-Index?node-id=0%3A1) para ter uma ideia de como sua tela deve se parecer.
 
-### 14 - Crie uma página para atualizar o valor da cotação de uma moeda
+### 13 - Crie uma página para atualizar o valor da cotação de uma moeda
 
 A página deverá conter:
 
